@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppEventGrid.Model", "EventGrid.Models\AppEventGrid.Model.csproj", "{D4C29514-C1D4-4F28-B8E3-4F7DFB15AF86}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventGridPublisher", "EventGridPublisher\EventGridPublisher.csproj", "{5DB061AE-0AAF-4A40-971F-9BFF7EB6D8DC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventWebHookConsumer1", "EventWebConsumerHook1\EventWebHookConsumer1.csproj", "{2543342E-E96F-44BA-A72B-3FC8E1DF4665}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventWebHookConsumer2", "EventWebConsumerHook2\EventWebHookConsumer2.csproj", "{A8A10CE9-A22D-4075-9017-EEBCD646FDAD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventGrid.Tests", "EventGrid.Tests\EventGrid.Tests.csproj", "{314003F1-1A6D-44C2-91EA-F38FDF1481E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens", "Itens", "{6CBBE211-1829-4812-90A4-CEABEE11C27A}"
+	ProjectSection(SolutionItems) = preProject
+		EventGrid.txt = EventGrid.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7F005C77-E514-4618-939E-F770E74D8602}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4C29514-C1D4-4F28-B8E3-4F7DFB15AF86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C29514-C1D4-4F28-B8E3-4F7DFB15AF86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C29514-C1D4-4F28-B8E3-4F7DFB15AF86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C29514-C1D4-4F28-B8E3-4F7DFB15AF86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DB061AE-0AAF-4A40-971F-9BFF7EB6D8DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB061AE-0AAF-4A40-971F-9BFF7EB6D8DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DB061AE-0AAF-4A40-971F-9BFF7EB6D8DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DB061AE-0AAF-4A40-971F-9BFF7EB6D8DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2543342E-E96F-44BA-A72B-3FC8E1DF4665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2543342E-E96F-44BA-A72B-3FC8E1DF4665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2543342E-E96F-44BA-A72B-3FC8E1DF4665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2543342E-E96F-44BA-A72B-3FC8E1DF4665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8A10CE9-A22D-4075-9017-EEBCD646FDAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A10CE9-A22D-4075-9017-EEBCD646FDAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8A10CE9-A22D-4075-9017-EEBCD646FDAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A10CE9-A22D-4075-9017-EEBCD646FDAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{314003F1-1A6D-44C2-91EA-F38FDF1481E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{314003F1-1A6D-44C2-91EA-F38FDF1481E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{314003F1-1A6D-44C2-91EA-F38FDF1481E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{314003F1-1A6D-44C2-91EA-F38FDF1481E9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{314003F1-1A6D-44C2-91EA-F38FDF1481E9} = {7F005C77-E514-4618-939E-F770E74D8602}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94D8C26D-EBFB-4B96-B34D-CE9C115338B7}
+	EndGlobalSection
+EndGlobal
