@@ -1,0 +1,28 @@
+#Script para deploy via PowerShell
+#
+# Configurações adicionais:
+1. Liberar firewall no Azure: Opção Allow Acess to Azure Services
+2. Adicionar a key do Insights no json de EventWebHookConsumer1 e EventWebHookConsumer2
+3. Adicionar a key do eventgrid criado no json de EventGridPublisher
+#
+
+az login
+az account set --subscription "Visual Studio Enterprise"
+az group create -n rgdemoevents -l brazilsouth
+az eventgrid topic create -n sadcomercial -g  rgdemoevents -l brazilsouth
+az appservice plan create -n plandev -g rgdemoevents -l brazilsouth --sku F1
+az webapp create -g rgdemoevents -p plandev -n sadwebpublisher1
+az webapp create -g rgdemoevents -p plandev -n sadwebappdemo
+az webapp create -g rgdemoevents -p plandev -n sadwebappdemo2
+
+az extension add -n application-insights
+az monitor app-insights component create --app sadcomercial --location westus2 --kind web -g rgdemoevents --application-type web
+
+az sql server create -l brazilsouth -g rgdemoevents -n sadserver -u silvio.souza -p Davisa@123
+az sql db create -g rgdemoevents -s sadserver -n dbdemo --service-objective S0
+--apos criar o banco use o script no projeto de modelos para criar as tabelas
+
+--execute as duas linhas abaixo apos publicar os webapps dos projetos EventWebHookConsumer1 em sadwebappdemo e EventWebHookConsumer1 em sadwebappdemo2
+az eventgrid event-subscription create --name updatesclienteapp1 --endpoint https://sadwebappdemo.azurewebsites.net/api/updates/cliente -g rgdemoevents --topic-name sadcomercial 
+az eventgrid event-subscription create --name updatesclienteapp2 --endpoint https://sadwebappdemo2.azurewebsites.net/api/updates/cliente -g rgdemoevents --topic-name sadcomercial 
+rem az group delete -n rgdemoevents -y
