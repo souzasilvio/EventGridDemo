@@ -6,3 +6,4 @@ Componentes da solução:
 3. EventGrid.txt - Scripts PowerShell para criação recursos usados no demo. EnventGrid, WebApps, ApplicationInsights, Banco SQL.
 4. Banco.Sql - Script para criação de tabelas usadas no demo nos apps EventWebHookConsumer1 e EventWebHookConsumer2.
 
+![Alt text](EnventGridDemo.jpg?raw=true "Diagrama de arquitetura")
