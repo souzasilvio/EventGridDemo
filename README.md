@@ -1,5 +1,7 @@
 # EventGridDemo
 Exemplo para provisionar EnventGrid e aplicações .Net Core para publicar e assinar eventos.
+(This source code demonstrate how to use Azure Event Grid. This solutions is written in C# Net Core.)
+
 Componentes da solução:
 1. EventGridPublisher - Console que demonstra como conectar e publicar no EventGrid
 2. EventWebHookConsumer1 e EventWebHookConsumer2 - Web API com implementação de webhook para subscribe no EventGrid.
