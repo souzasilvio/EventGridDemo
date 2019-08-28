@@ -1,0 +1,55 @@
+﻿using AppEventGrid.Model;
+using Dapper;
+using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace EventGrid.Repositories
+{
+    public class RepositorioCliente : IRepositorioCliente
+    {
+        public IConfiguration Configuration { get; }
+        private string stringConexao;
+
+        public RepositorioCliente(IConfiguration configuration)
+        {
+            Configuration = configuration;
+            stringConexao = Configuration["ConectionString"];
+        }
+
+        public void Salvar(Cliente cliente)
+        {
+            string sqlInsere = "Insert Into ClienteApp1(Nome, Email) Values(@Nome, @Email)";
+            string sqlConsult = "Select Codigo, Nome, Email From ClienteApp1 Where Codigo = @Codigo";
+            string sqlUpdate = "Update ClienteApp1 Set Nome = @Nome, Email = @Email, DataModificacao = @DataModificacao Where Codigo = @Codigo";
+            using (SqlConnection conexao = new SqlConnection(stringConexao))
+            {
+                var reg = conexao.QueryFirstOrDefault<Cliente>(sqlConsult, new { Codigo = cliente.Codigo });
+                if (reg == null)
+                {
+                    conexao.ExecuteScalar<Cliente>(sqlInsere, cliente);
+                }
+                else
+                {
+                    conexao.ExecuteScalar<Cliente>(sqlUpdate, cliente);
+                }
+            }
+        }
+
+        public List<Cliente> Listar()
+        {
+            string sqlConsulta = "Select Codigo, Nome, Email, DataModificacao From ClienteApp1 Order by Codigo Asc";
+            using (SqlConnection conn = new SqlConnection(stringConexao))
+            {
+                var lista = conn.Query<Cliente>(sqlConsulta).ToList();
+                return lista;
+            }
+        }
+
+
+
+    }
+}
