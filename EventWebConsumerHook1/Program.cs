@@ -10,6 +10,9 @@ using Microsoft.Extensions.Logging;
 
 namespace EventWebHookConsumer1
 {
+    /// <summary>
+    /// Exemplo de subscriber 1
+    /// </summary>
     public class Program
     {
         public static void Main(string[] args)
