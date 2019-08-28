@@ -15,7 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventGrid.Tests", "EventGri
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens", "Itens", "{6CBBE211-1829-4812-90A4-CEABEE11C27A}"
 	ProjectSection(SolutionItems) = preProject
+		EventGrid.Models\Banco.sql = EventGrid.Models\Banco.sql
+		EnventGridDemo.jpg = EnventGridDemo.jpg
 		EventGrid.txt = EventGrid.txt
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7F005C77-E514-4618-939E-F770E74D8602}"
